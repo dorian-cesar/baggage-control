@@ -1,5 +1,5 @@
 <?php
-include 'conexion.php';
+include __DIR__.'/conexion.php';
 
 $rut = $_POST['rut'];
 $nombre = $_POST['nombre'];

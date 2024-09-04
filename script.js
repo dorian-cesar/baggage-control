@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Obtener las ciudades y cargarlas en los select de Origen y Destino
-    $.getJSON('backend/obtener_ciudades.php', function(data) {
+    $.getJSON('./backend/obtener_ciudades.php', function(data) {
         var opciones = '';
         $.each(data, function(key, val) {
             opciones += '<option value="' + val + '">' + val + '</option>';
@@ -34,7 +34,7 @@ $(document).ready(function() {
         var rut = $('#rut').val();
         var codigoEquipaje = servicio + rut;
 
-        $.post('backend/registrar.php', formData + '&codigoEquipaje=' + codigoEquipaje, function(data) {
+        $.post('./backend/registrar.php', formData + '&codigoEquipaje=' + codigoEquipaje, function(data) {
             $('#ticket').html(data);
         });
     });
